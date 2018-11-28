@@ -69,7 +69,7 @@ def runTaurusTest() {
   }
 }
 
-node("local-agent") {
+node() {
   deleteDir()
 
   stage('Checkout') {
