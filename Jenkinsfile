@@ -3,7 +3,13 @@
 def buildTestAndPackageApp() {
   echo ">>> Building, testing and packaging App"
   try {
-    sh "mvn clean verify"
+    withMaven(
+        // Maven installation declared in the Jenkins "Global Tool Configuration"
+        maven: 'M3'
+      // Run the maven build
+      sh "mvn clean verify"
+ 
+    }
   } finally {
     junit([healthScaleFactor: 0.0, testResults: '**/target/surefire-reports/*.xml,**/target/failsafe-reports/*.xml'])
   }
