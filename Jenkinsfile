@@ -73,7 +73,7 @@ node("local-agent") {
   deleteDir()
 
   stage('Checkout') {
-    git 'http://root@localhost:30080/root/java-ci-example.git'
+    checkout()
   }
 
   stage('Build & Test') {
