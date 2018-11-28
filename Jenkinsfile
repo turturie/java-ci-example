@@ -73,7 +73,7 @@ node() {
   deleteDir()
 
   stage('Checkout') {
-    checkout()
+    checkout scm
   }
 
   stage('Build & Test') {
